@@ -1,53 +1,36 @@
-#include<iostream>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
-int main(){
-    //srand(time(0));
-    //generating random numbers and assigning them to daysUntilExpiration.
-    int daysUntilExpiration = 7 ;//(rand() % 10);
-    //if statements for executing if  numbers between 5 and 10
-   
-switch( daysUntilExpiration ){
-    case 1:
-       if (daysUntilExpiration>=5 ){
-        cout<<"Your subscription will expire soon. Renew now!";
-       }
-    
-break;
-//if statement for executing if  numbers between 1 and 5.
- case 2:
-    if(daysUntilExpiration<5 ){
-    if( daysUntilExpiration>1){
-      cout<<"Your subscription expires in " <<  daysUntilExpiration  <<  "Renew now and save 10%!";
+int main() {
+    srand(time(0));
+    // Generating random numbers between 0 and 10.
+    int daysUntilExpiration = (rand() % 11); 
+    switch (daysUntilExpiration) {
+        case 0:
+            cout << "Your subscription has expired" << endl;
+            break;
+        case 1:
+            cout << "Your subscription expires within a day! Renew now and save 20%!" << endl;
+            break;
+        case 2:
+        case 3:
+        case 4:
+            cout << "Your subscription expires in " << daysUntilExpiration << " days. Renew now and save 10%!" << endl;
+            break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            cout << "Your subscription will expire soon. Renew now!" << endl;
+            break;
+        default:
+            cout << "You have an active subscription." << endl;
+    }
 
- }
- }
-break;
-
-    //if statement if number is equal to 1.
-  case 3:
- 
-    if (daysUntilExpiration ==1){
-    cout<<"Your subscription expires within a day! Renew now and save 20%!";
+    return 0;
 }
- 
-break;
-// if statement for executing if number is equal to zero.
-case 4: 
-
-    if(daysUntilExpiration ==0){
-    cout<<"Your subscription has expired";
-}
-
-break;
-//else if statement for executing if random number is greater then 10.
-case 5 :
-    if(daysUntilExpiration ==0){
-         cout<<"You have an active subscription.";
-    
-}
-break;
-default: return 0;
-}
-}
-
